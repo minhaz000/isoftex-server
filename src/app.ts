@@ -10,6 +10,7 @@ import { verifyClient } from './middlewares/verify.client'
 import { ConnectDB } from './middlewares/db.congfig'
 import rootRouter from './modules/root/root.routes'
 import authRoute from './modules/auth/auth.routes'
+import { localStrategy } from './modules/auth/auth.utils'
 
 const app: Application = express()
 app.use(express.json())
@@ -30,10 +31,10 @@ app.use(
 app.use(ConnectDB)
 app.use(passport.initialize())
 app.use(passport.session())
+passport.use(localStrategy)
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }))
 app.use(verifyClient)
 app.use('/', rootRouter)
-
 app.use('/auth', authRoute)
 
 export default app

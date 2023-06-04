@@ -12,10 +12,10 @@ export const initConnection = () => {
 }
 export const ConnectDB = (req: Request, res: Response, next: NextFunction) => {
   let DataBase: any = ''
-  if (!req.headers.origin) {
-    DataBase = req.headers.host?.split('//')[1].split('.')[0]
-  } else {
+  if (req.headers.origin) {
     DataBase = req.headers.origin?.split('//')[1].split('.')[0]
+  } else {
+    DataBase = req.headers.host?.split('.')[0]
   }
   console.log(DataBase)
   initModels('isoftex')

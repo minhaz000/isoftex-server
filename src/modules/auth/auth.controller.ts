@@ -7,6 +7,6 @@ export const index = async (req: Request, res: Response) => {
   res.send('upadate is code fro sessions strict  ')
 }
 export const read = (req: Request, res: Response) => {
-  const ressult = rootModel.User.find({})
-  res.send(ressult)
+  // const ressult = rootModel.User.find({})
+  res.send('ressult')
 }
