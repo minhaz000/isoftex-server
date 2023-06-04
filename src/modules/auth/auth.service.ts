@@ -1,4 +1,1 @@
-export const  getRootData=  ()=>{
-
-}
-
+export const getRootData = () => {}

@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
-import { userSchema } from "../auth/auth.schema";
+import mongoose from 'mongoose'
+import { userSchema } from '../auth/auth.schema'
 
-export const rootModel:any = {}
-export const initModels = (DataBase:string)=>{
+export const rootModel: any = {}
+export const initModels = (DataBase: string) => {
   console.log(DataBase)
-  rootModel.User = mongoose.connection.useDb(DataBase).model('user',userSchema)
+  rootModel.User = mongoose.connection.useDb(DataBase).model('user', userSchema)
 }

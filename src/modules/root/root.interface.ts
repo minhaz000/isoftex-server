@@ -1,3 +1,3 @@
-interface IView{
-  data:number
+interface IView {
+  data: number
 }
