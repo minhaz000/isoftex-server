@@ -33,6 +33,7 @@ app.use(passport.session())
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }))
 app.use(verifyClient)
 app.use('/', rootRouter)
+
 app.use('/auth', authRoute)
 
 export default app
